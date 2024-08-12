@@ -207,19 +207,48 @@ $utilities: map-merge(
       )
     ),
     "max-width": (
+      responsive: true,
       property: max-width,
       class: mw,
-      values: (100: 100%)
+      values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%
+      )
     ),
     "viewport-width": (
+      responsive: true,
       property: width,
       class: vw,
-      values: (100: 100vw)
+      values: (
+        25: 25vw,
+        50: 50vw,
+        75: 75vw,
+        100: 100vw
+      )
     ),
     "min-viewport-width": (
+      responsive: true,
       property: min-width,
       class: min-vw,
-      values: (100: 100vw)
+      values: (
+        25: 25vw,
+        50: 50vw,
+        75: 75vw,
+        100: 100vw
+      )
+    ),
+    "max-viewport-width": (
+      responsive: true,
+      property: max-width,
+      class: max-vw,
+      values: (
+        25: 25vw,
+        50: 50vw,
+        75: 75vw,
+        100: 100vw
+      )
     ),
     "height": (
       property: height,
@@ -233,19 +262,48 @@ $utilities: map-merge(
       )
     ),
     "max-height": (
+      responsive: true,
       property: max-height,
       class: mh,
-      values: (100: 100%)
+      values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%
+      )
     ),
     "viewport-height": (
+      responsive: true,
       property: height,
       class: vh,
-      values: (100: 100vh)
+      values: (
+        25: 25vh,
+        50: 50vh,
+        75: 75vh,
+        100: 100vh
+      )
     ),
     "min-viewport-height": (
+      responsive: true,
       property: min-height,
       class: min-vh,
-      values: (100: 100vh)
+      values: (
+        25: 25vh,
+        50: 50vh,
+        75: 75vh,
+        100: 100vh
+      )
+    ),
+    "max-viewport-height": (
+      responsive: true,
+      property: max-height,
+      class: max-vh,
+      values: (
+        25: 25vh,
+        50: 50vh,
+        75: 75vh,
+        100: 100vh
+      )
     ),
     // scss-docs-end utils-sizing
     // Flex utilities
