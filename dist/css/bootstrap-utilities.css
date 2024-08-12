@@ -1075,6 +1075,22 @@
   min-height: 100vh !important;
 }
 
+.max-vh-25 {
+  max-height: 25vh !important;
+}
+
+.max-vh-50 {
+  max-height: 50vh !important;
+}
+
+.max-vh-75 {
+  max-height: 75vh !important;
+}
+
+.max-vh-100 {
+  max-height: 100vh !important;
+}
+
 .flex-fill {
   flex: 1 1 auto !important;
 }
