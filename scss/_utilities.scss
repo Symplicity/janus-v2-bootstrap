@@ -247,16 +247,6 @@ $utilities: map-merge(
       class: min-vh,
       values: (100: 100vh)
     ),
-    "max-viewport-height": (
-      property: max-height,
-      class: max-vh,
-      values: (
-        25: 25vh,
-        50: 50vh,
-        75: 75vh,
-        100: 100vh
-      )
-    ),
     // scss-docs-end utils-sizing
     // Flex utilities
     // scss-docs-start utils-flex
