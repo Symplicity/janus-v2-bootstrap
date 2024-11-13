@@ -182,7 +182,6 @@
     }
   },
   "dependencies": {
-    "@tabler/icons": "https://github.com/Symplicity/tabler-icons",
     "@symplicity/janus-tokens": "github:Symplicity/janus-tokens#v2"
   }
 }
