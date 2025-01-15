@@ -8998,6 +8998,175 @@ textarea.form-control-lg {
 }
 
 /* stylelint-enable */
+.form-check-input.bg-primary {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-primary:checked {
+  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-secondary {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-secondary:checked {
+  background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-success {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-success:checked {
+  background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-info {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-info:checked {
+  background-color: rgba(var(--bs-info-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-warning {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-warning:checked {
+  background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-danger {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-danger:checked {
+  background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-light {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-light:checked {
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-dark {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-dark:checked {
+  background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-gray-50 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-gray-50:checked {
+  background-color: rgba(var(--bs-gray-50-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-gray-100 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-gray-100:checked {
+  background-color: rgba(var(--bs-gray-100-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-gray-200 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-gray-200:checked {
+  background-color: rgba(var(--bs-gray-200-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-gray-300 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-gray-300:checked {
+  background-color: rgba(var(--bs-gray-300-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-gray-400 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-gray-400:checked {
+  background-color: rgba(var(--bs-gray-400-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-gray-500 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-gray-500:checked {
+  background-color: rgba(var(--bs-gray-500-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-gray-600 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-gray-600:checked {
+  background-color: rgba(var(--bs-gray-600-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-gray-700 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-gray-700:checked {
+  background-color: rgba(var(--bs-gray-700-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-gray-800 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-gray-800:checked {
+  background-color: rgba(var(--bs-gray-800-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-gray-900 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-gray-900:checked {
+  background-color: rgba(var(--bs-gray-900-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-primary-25 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-primary-25:checked {
+  background-color: rgba(var(--bs-primary-25-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-primary-50 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-primary-50:checked {
+  background-color: rgba(var(--bs-primary-50-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-primary-75 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-primary-75:checked {
+  background-color: rgba(var(--bs-primary-75-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-primary-100 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-primary-100:checked {
+  background-color: rgba(var(--bs-primary-100-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-primary-200 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-primary-200:checked {
+  background-color: rgba(var(--bs-primary-200-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-primary-300 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-primary-300:checked {
+  background-color: rgba(var(--bs-primary-300-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-primary-400 {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-primary-400:checked {
+  background-color: rgba(var(--bs-primary-400-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-black {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-black:checked {
+  background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-white {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-white:checked {
+  background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
+}
+.form-check-input.bg-body {
+  background-color: var(--bs-form-check-bg) !important;
+}
+.form-check-input.bg-body:checked {
+  background-color: rgba(var(--bs-body-bg-rgb), var(--bs-bg-opacity)) !important;
+}
+
 .ls-1 {
   letter-spacing: 0.084em;
 }
