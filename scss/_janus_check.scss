@@ -1,0 +1,10 @@
+.form-check-input {
+  @each $color, $value in $utilities-bg-colors {
+    &.bg-#{$color} {
+      background-color: var(--#{$prefix}form-check-bg) !important;
+      &:checked {
+        background-color: $value !important;
+      }
+    }
+  }
+}
