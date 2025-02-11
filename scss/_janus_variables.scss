@@ -140,7 +140,7 @@ $box-shadow-lg:               0 1rem 1.5rem rgba(0, 0, 0, 0.28), 0 .25rem 1rem r
 $component-active-color:      $white !default;
 $component-active-bg:         $primary !default;
 
-$modal-backdrop-opacity:      .15 !default; 
+$modal-backdrop-opacity:      .15 !default;
 $modal-content-box-shadow-xs: $box-shadow-lg;
 $modal-content-box-shadow-sm-up: $box-shadow-lg;
 $dropdown-box-shadow: $box-shadow-sm;
@@ -325,6 +325,9 @@ $card-cap-padding-x:          1.25rem !default;
 $card-cap-padding-y:          1.25rem !default;
 $card-inner-border-radius:    $border-radius !default;
 
+// Accordion
+$accordion-border-color:      var(--#{$prefix}light) !default;
+
 $nav-tabs-link-active-color:  $janus-color-primary !default;
 $nav-underline-link-active-color: $janus-color-primary !default;
 $nav-link-color:              $gray-900 !default;
@@ -372,30 +375,30 @@ $zindex-levels: (
     width: $janus-icon-base-font-size;
     height: $janus-icon-base-font-size;
   }
-  
+
   .icon-lg-font-size {
     width: $janus-icon-lg-font-size;
     height: $janus-icon-lg-font-size;
   }
-  
+
   .icon-xl-font-size {
     width: $janus-icon-xl-font-size;
     height: $janus-icon-xl-font-size;
   }
-  
+
   .icon-xxl-font-size {
     width: $janus-icon-xxl-font-size;
     height: $janus-icon-xxl-font-size;
   }
-  
+
   .text-shadow-none {
     text-shadow: none;
   }
-  
+
   svg {
     stroke-width: 1.5;
   }
-  
+
   [class^="tabler-chevron-"] {
     svg {
       stroke-width: 2;
