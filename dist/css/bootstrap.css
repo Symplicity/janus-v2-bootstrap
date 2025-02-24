@@ -9629,6 +9629,34 @@ h6,
 }
 
 .sw-1 {
+  stroke-width: 0.25;
+}
+
+.sw-2 {
+  stroke-width: 0.5;
+}
+
+.sw-3 {
+  stroke-width: 0.75;
+}
+
+.sw-4 {
+  stroke-width: 1;
+}
+
+.sw-5 {
+  stroke-width: 1.25;
+}
+
+.sw-6 {
+  stroke-width: 1.5;
+}
+
+.sw-7 {
+  stroke-width: 1.75;
+}
+
+.sw-8 {
   stroke-width: 2;
 }
 

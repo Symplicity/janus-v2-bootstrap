@@ -1,5 +1,5 @@
-@for $i from 1 through floor(calc($stroke-width-max / $stroke-width-max)) {
-  $stroke-width-value: calc($i * $stroke-width-max);
+@for $i from 1 through floor(calc($stroke-width-max / $stroke-width-step)) {
+  $stroke-width-value: calc($i * $stroke-width-step);
   .sw-#{$i} {
     stroke-width: #{$stroke-width-value};
   }
