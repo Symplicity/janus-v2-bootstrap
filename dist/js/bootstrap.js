@@ -229,6 +229,7 @@
   const reflow = element => {
     element.offsetHeight; // eslint-disable-line no-unused-expressions
   };
+
   const getjQuery = () => {
     if (window.jQuery && !document.body.hasAttribute('data-bs-no-jquery')) {
       return window.jQuery;
@@ -2095,6 +2096,7 @@
     // if false, we use the backdrop helper without adding any element to the dom
     rootElement: 'body' // give the choice to place backdrop under different elements
   };
+
   const DefaultType$8 = {
     className: 'string',
     clickCallback: '(function|null)',
@@ -2219,6 +2221,7 @@
     autofocus: true,
     trapElement: null // The element to trap focus inside of
   };
+
   const DefaultType$7 = {
     autofocus: 'boolean',
     trapElement: 'element'
