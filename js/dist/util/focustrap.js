@@ -33,7 +33,6 @@
     autofocus: true,
     trapElement: null // The element to trap focus inside of
   };
-
   const DefaultType = {
     autofocus: 'boolean',
     trapElement: 'element'
