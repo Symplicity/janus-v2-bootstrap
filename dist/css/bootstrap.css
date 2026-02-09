@@ -2841,11 +2841,11 @@ progress {
   padding: 0;
 }
 .form-control::-moz-placeholder {
-  color: rgb(170, 170, 170);
+  color: rgb(108, 108, 108);
   opacity: 1;
 }
 .form-control::placeholder {
-  color: rgb(170, 170, 170);
+  color: rgb(108, 108, 108);
   opacity: 1;
 }
 .form-control:disabled {
@@ -21466,14 +21466,14 @@ h6,
   height: 1.5em;
 }
 #fg_content input[type=text]::-moz-placeholder, #fg_content input[type=password]::-moz-placeholder, #fg_content input[type=number]::-moz-placeholder, #fg_content textarea::-moz-placeholder {
-  color: rgb(170, 170, 170);
+  color: rgb(108, 108, 108);
   opacity: 1;
 }
 #fg_content input[type=text]::placeholder,
 #fg_content input[type=password]::placeholder,
 #fg_content input[type=number]::placeholder,
 #fg_content textarea::placeholder {
-  color: rgb(170, 170, 170);
+  color: rgb(108, 108, 108);
   opacity: 1;
 }
 #fg_content input[type=text]:disabled, #fg_content input[type=text][readonly],
