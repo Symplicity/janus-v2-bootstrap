@@ -1,0 +1,22 @@
+@import "functions";
+@import "variables";
+@import "maps";
+@import "mixins";
+@import "utilities";
+
+$utilities: map-merge(
+    $utilities,
+    (
+      "text-transform": map-merge(
+          map-get($utilities, "text-transform"),
+          (
+            values: (
+              lowercase: lowercase,
+              uppercase: uppercase,
+              capitalize: capitalize,
+              transform-unset: unset
+            )
+          )
+      )
+    )
+);
