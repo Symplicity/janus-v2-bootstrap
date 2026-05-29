@@ -1,0 +1,24 @@
+@mixin button-outline-variant(
+  $color,
+  $color-hover: color-contrast(mix(#fff, $color, 95%), $color),
+  $active-background: mix(#fff, $color, 95%),
+  $active-border: $color,
+  $active-color: color-contrast(mix(#fff, $color, 95%), $color)
+) {
+  $btn-border-color: if($color == $secondary, mix($color, #fff, 29%), $color);
+  --#{$prefix}btn-color: #{$color};
+  --#{$prefix}btn-bg: #fff;
+  --#{$prefix}btn-border-color: #{$btn-border-color};
+  --#{$prefix}btn-hover-color: #{$color-hover};
+  --#{$prefix}btn-hover-bg: #{$active-background};
+  --#{$prefix}btn-hover-border-color: #{$active-border};
+  --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
+  --#{$prefix}btn-active-color: #{$active-color};
+  --#{$prefix}btn-active-bg: #{$active-background};
+  --#{$prefix}btn-active-border-color: #{$active-border};
+  --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+  --#{$prefix}btn-disabled-color: #{$color};
+  --#{$prefix}btn-disabled-bg: var(--bs-gray-200);
+  --#{$prefix}btn-disabled-border-color: #{$color};
+  --#{$prefix}gradient: none;
+}
