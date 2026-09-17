@@ -11,10 +11,10 @@
     justify-content: center;
     width: 1.5rem;
     height: 1.5rem;
-    color: #000;
+    color: var(--#{$prefix}black);
     content: counter(li);
     counter-increment: li;
-    background: #eee;
+    background: var(--#{$prefix}gray-200);
     border-radius: 50%; // stylelint-disable-line property-disallowed-list
   }
   p {

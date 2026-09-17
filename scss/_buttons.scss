@@ -174,7 +174,7 @@
   --#{$prefix}btn-active-border-color: transparent;
   --#{$prefix}btn-disabled-color: #{$btn-link-disabled-color};
   --#{$prefix}btn-disabled-border-color: transparent;
-  --#{$prefix}btn-box-shadow: 0 0 0 #000; // Can't use `none` as keyword negates all values when used with multiple shadows
+  --#{$prefix}btn-box-shadow: 0 0 0 var(--#{$prefix}black); // Can't use `none` as keyword negates all values when used with multiple shadows
 
   text-decoration: $link-decoration;
   @if $enable-gradients {
@@ -251,7 +251,7 @@
 
         &:focus + &,
         &:focus {
-          outline: 2px solid #000;
+          outline: 2px solid var(--#{$prefix}black);
         }
 
         svg {
@@ -278,7 +278,7 @@
           border-bottom-left-radius: 0;
           border-top-left-radius: 12px;
           border-top-right-radius: 12px;
-          background: #fff;
+          background: var(--#{$prefix}white);
           border: 1px solid $gray-200;
           box-shadow: $box-shadow-sm;
         }
@@ -291,13 +291,13 @@
   }
 
   &.btn-action-toggle {
-    background: $gray-100;
-    color: $janus-color-primary;
+    background: var(--#{$prefix}gray-100);
+    color: var(--#{$prefix}primary);
     padding: .125rem 1.25rem;
 
     &.active {
-      background: $janus-color-primary;
-      color: #fff;
+      background: var(--#{$prefix}primary);
+      color: var(--#{$prefix}white);
     }
   }
 }
@@ -322,7 +322,7 @@
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
     &:focus {
-      box-shadow: inset 0px 0px 0px 3px #000;
+      box-shadow: inset 0px 0px 0px 3px var(--#{$prefix}black);
     }
   }
 
@@ -333,7 +333,7 @@
     > .form-control {
       border-radius: 0;
       &:focus {
-        box-shadow: inset 0px 0px 0px 3px #000;
+        box-shadow: inset 0px 0px 0px 3px var(--#{$prefix}black);
       }
     }
   }
@@ -342,7 +342,7 @@
     border-top-right-radius: 50rem !important;
     border-bottom-right-radius: 50rem !important;
     &:focus {
-      box-shadow: inset 0px 0px 0px 3px #000;
+      box-shadow: inset 0px 0px 0px 3px var(--#{$prefix}black);
     }
   }
 }

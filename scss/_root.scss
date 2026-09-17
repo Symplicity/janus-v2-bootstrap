@@ -1,3 +1,9 @@
+// Janus Phase 1b: dark-mode custom-property mixins (defines janus-dark-vars()
+// used inside the color-mode(dark) block below). Imported here so every entry
+// point that pulls in `_root` (bootstrap, bootstrap-reboot, bootstrap-utilities)
+// has the mixin available. The partial emits no CSS on its own.
+@import "janus_root-dark";
+
 :root,
 [data-bs-theme="light"] {
   // Note: Custom variable values only support SassScript inside `#{}`.
@@ -183,5 +189,12 @@
     --#{$prefix}form-invalid-color: #{$form-invalid-color-dark};
     --#{$prefix}form-invalid-border-color: #{$form-invalid-border-color-dark};
     // scss-docs-end root-dark-mode-vars
+
+    // Janus Phase 1b (output ②): full neutral gray scale, elevation ladder,
+    // brand primary + `--bs-primary-*`/`--janus-primary-*` tint scales, and
+    // success/info/warning/danger bases + tint scales. All emitted inside this
+    // `[data-bs-theme="dark"]` selector, so the light (data-bs-theme absent)
+    // cascade is untouched.
+    @include janus-dark-vars();
   }
 }

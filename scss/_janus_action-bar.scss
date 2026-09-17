@@ -31,7 +31,7 @@
   .nav {
     .nav-link {
       height: auto;
-      background: #fff;
+      background: var(--#{$prefix}white);
       box-shadow: inset 0 1px 0 0 var(--#{$prefix}gray-200);
       @include media-breakpoint-up(md) {
         box-shadow: inset 1px 0 0 0 var(--#{$prefix}gray-200);
@@ -39,13 +39,13 @@
 
       &.active {
         background: var(--#{$prefix}gray-100);
-        box-shadow: inset 0 2px 0 0 $janus-color-primary;
+        box-shadow: inset 0 2px 0 0 var(--#{$prefix}primary);
         @include media-breakpoint-up(md) {
-          box-shadow: inset 2px 0 0 0 $janus-color-primary;
+          box-shadow: inset 2px 0 0 0 var(--#{$prefix}primary);
         }
 
         svg {
-          color: $janus-color-primary;
+          color: var(--#{$prefix}primary);
         }
       }
 

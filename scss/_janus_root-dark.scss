@@ -1,0 +1,115 @@
+// Janus dark-mode root custom properties (Phase 1b — output ②)
+// ---------------------------------------------------------------------------
+//   janus-dark-vars()  — emits every dark-mode override this repo is responsible
+//     for: full neutral gray scale (+ rgb companions), white/black endpoints,
+//     border color, the elevation ladder, `--bs-primary` + the native
+//     `--bs-primary-*` tint scale, and success/info/warning/danger bases + tint
+//     scales. Placed INSIDE the `[data-bs-theme="dark"]` block in `_root.scss`
+//     (which is part of the MAIN `bootstrap.css` bundle — dark mode ships in the
+//     single bundle and activates purely via the attribute, matching how
+//     Bootstrap 5.3 itself ships dark mode). It only affects dark rendering and
+//     never touches the `data-bs-theme`-absent (light) cascade.
+//
+//   The Janus primary tint scale is exposed via the NATIVE `--bs-primary-25..400`
+//     slots (emitted in `:root` by Bootstrap's `$theme-colors` loop, with dark
+//     overrides below). The former custom `--janus-primary-*` mirror was dropped
+//     as redundant — consumers use `var(--bs-primary-*)`.
+
+@mixin janus-dark-vars() {
+  // --- Neutral endpoints (guide §2.1: never pure #000/#fff) ---
+  --#{$prefix}white: #{$white-dark};
+  --#{$prefix}black: #{$black-dark};
+  --#{$prefix}white-rgb: #{to-rgb($white-dark)};
+  --#{$prefix}black-rgb: #{to-rgb($black-dark)};
+
+  // --- Full neutral gray scale (inverted lightness — inventory §3) ---
+  --#{$prefix}gray-50: #{$gray-50-dark};
+  --#{$prefix}gray-100: #{$gray-100-dark};
+  --#{$prefix}gray-200: #{$gray-200-dark};
+  --#{$prefix}gray-300: #{$gray-300-dark};
+  --#{$prefix}gray-400: #{$gray-400-dark};
+  --#{$prefix}gray-500: #{$gray-500-dark};
+  --#{$prefix}gray-600: #{$gray-600-dark};
+  --#{$prefix}gray-700: #{$gray-700-dark};
+  --#{$prefix}gray-800: #{$gray-800-dark};
+  --#{$prefix}gray-900: #{$gray-900-dark};
+
+  // RGB companions for the neutral scale. The light bundle emits `--bs-gray-*-rgb`
+  // for every step, and CSM/janus code consumes them via `rgba(var(--bs-gray-200-rgb), α)`
+  // (e.g. csm `_dashboards.scss`) — without these dark overrides those translucent
+  // fills would keep their light RGB triplet and fail to switch (fix: JVB#3).
+  --#{$prefix}gray-50-rgb: #{to-rgb($gray-50-dark)};
+  --#{$prefix}gray-100-rgb: #{to-rgb($gray-100-dark)};
+  --#{$prefix}gray-200-rgb: #{to-rgb($gray-200-dark)};
+  --#{$prefix}gray-300-rgb: #{to-rgb($gray-300-dark)};
+  --#{$prefix}gray-400-rgb: #{to-rgb($gray-400-dark)};
+  --#{$prefix}gray-500-rgb: #{to-rgb($gray-500-dark)};
+  --#{$prefix}gray-600-rgb: #{to-rgb($gray-600-dark)};
+  --#{$prefix}gray-700-rgb: #{to-rgb($gray-700-dark)};
+  --#{$prefix}gray-800-rgb: #{to-rgb($gray-800-dark)};
+  --#{$prefix}gray-900-rgb: #{to-rgb($gray-900-dark)};
+
+  // Global border color. Bootstrap's own dark block sets `--bs-border-color` from
+  // `$border-color-dark` (a fixed Bootstrap gray), but Janus surfaces are darker
+  // than Bootstrap's default dark, so that value is too faint to read against the
+  // Janus elevation ladder (guide §2.1 — borders must stay visible on dark). Align
+  // it to the Janus dark gray scale instead so dividers remain perceptible, and
+  // override the translucent form to match (fix: JVB#4).
+  --#{$prefix}border-color: #{$gray-300-dark};
+  --#{$prefix}border-color-translucent: #{rgba($gray-300-dark, .3)};
+
+  // --- Elevation ladder (guide §2.2, inventory §6): surfaces step lighter ---
+  // Surface 0 = body background. Surface 1 = card/panel/nav/row. Surface 2 =
+  // modal/dropdown/popover/tooltip. Component bg vars that already point at
+  // var(--bs-body-bg) are re-pointed to the appropriate surface step so
+  // overlapping layers remain distinguishable without relying on shadows.
+  --#{$prefix}body-bg: #{$surface-0-dark};
+  --#{$prefix}body-bg-rgb: #{to-rgb($surface-0-dark)};
+  --#{$prefix}card-bg: #{$surface-1-dark};
+  --#{$prefix}card-cap-bg: #{$surface-1-dark};
+  --#{$prefix}list-group-bg: #{$surface-1-dark};
+  --#{$prefix}dropdown-bg: #{$surface-2-dark};
+  --#{$prefix}modal-bg: #{$surface-2-dark};
+  --#{$prefix}popover-bg: #{$surface-2-dark};
+  --#{$prefix}offcanvas-bg: #{$surface-1-dark};
+
+  // Borders need to stay visible on dark (guide §2.1). Boost via gray-300 dark.
+  --#{$prefix}card-border-color: #{$gray-300-dark};
+  --#{$prefix}dropdown-border-color: #{$gray-300-dark};
+  --#{$prefix}modal-border-color: #{$gray-300-dark};
+
+  // --- Brand primary: hold hue, lift lightness (guide §3.1) ---
+  --#{$prefix}primary: #{$primary-dark-base};
+  --#{$prefix}primary-rgb: #{to-rgb($primary-dark-base)};
+
+  // Native Bootstrap `--bs-primary-*` tint slots (already emitted in light via
+  // the $theme-colors loop) get their dark overrides here.
+  --#{$prefix}primary-25: #{$primary-25-dark};
+  --#{$prefix}primary-50: #{$primary-50-dark};
+  --#{$prefix}primary-75: #{$primary-75-dark};
+  --#{$prefix}primary-100: #{$primary-100-dark};
+  --#{$prefix}primary-200: #{$primary-200-dark};
+  --#{$prefix}primary-300: #{$primary-300-dark};
+  --#{$prefix}primary-400: #{$primary-400-dark};
+  --#{$prefix}primary-dark: #{shade-color($primary-dark-base, 25%)};
+
+  // --- Semantic bases: hold hue, adjust lightness only (guide §3.2) ---
+  --#{$prefix}success: #{$success-dark-base};
+  --#{$prefix}success-rgb: #{to-rgb($success-dark-base)};
+  --#{$prefix}info: #{$info-dark-base};
+  --#{$prefix}info-rgb: #{to-rgb($info-dark-base)};
+  --#{$prefix}warning: #{$warning-dark-base};
+  --#{$prefix}warning-rgb: #{to-rgb($warning-dark-base)};
+  --#{$prefix}danger: #{$danger-dark-base};
+  --#{$prefix}danger-rgb: #{to-rgb($danger-dark-base)};
+
+  // Semantic tint scales (dark), mirroring the primary treatment (spec §4.4).
+  --janus-success-100: #{$success-100-dark};
+  --janus-success-200: #{$success-200-dark};
+  --janus-info-100: #{$info-100-dark};
+  --janus-info-200: #{$info-200-dark};
+  --janus-warning-100: #{$warning-100-dark};
+  --janus-warning-200: #{$warning-200-dark};
+  --janus-danger-100: #{$danger-100-dark};
+  --janus-danger-200: #{$danger-200-dark};
+}

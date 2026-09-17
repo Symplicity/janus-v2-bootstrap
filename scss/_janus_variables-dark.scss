@@ -1,0 +1,97 @@
+// Janus dark-mode scales (Phase 1b — output ②)
+// ===========================================================================
+// Janus-specific dark-axis variables that extend Bootstrap's own dark vars
+// (`_variables-dark.scss`). Kept in a separate `_janus_*` file because these
+// DEPEND ON the janus-tokens dark tokens (`$janus-color-*-dark`, provided by
+// `_janus_variables.scss`'s import of `@symplicity/janus-tokens/dist/index`).
+//
+// IMPORT ORDER REQUIREMENT: this file must be imported AFTER `janus_variables`
+// (which defines `$janus-color-*-dark`) and after `variables` / `variables-dark`
+// (Bootstrap's `$primary`, `$gray-*`, native dark vars). In `bootstrap.scss`:
+//   functions -> janus_variables -> variables -> variables-dark -> janus_variables-dark
+// Only the MAIN bundle imports this. Bootstrap's standalone `bootstrap-grid`/
+// `-utilities`/`-reboot` entries import only `variables-dark` (self-contained,
+// no token dependency), so they keep compiling without janus-tokens.
+//
+// These close the coverage gap that Bootstrap's own dark vars do not address:
+// the full neutral gray scale and the Janus-specific primary tint scale (plus
+// success/info/warning/danger tint scales) that downstream repos (fg-janus,
+// lg-janus, csm) consume via `var(--bs-*)`.
+//
+// Neutral axis: LIGHTNESS-INVERTED gray scale sourced from the janus-tokens
+// dark tokens ($janus-color-*-dark) — janus-tokens is the single source of
+// truth, so this repo's dark neutrals stay in step with it (no hardcoding).
+//
+// Semantic/brand axis: bases come from the dark semantic tokens; the tint
+// scales are derived with `mix()` toward the darkest surface (same pattern
+// Bootstrap uses for its dark `-text-emphasis`/`-bg-subtle`), so hue is held
+// and only lightness/saturation shift.
+// scss-docs-start janus-dark-mode-vars
+
+// Base neutral endpoints — from the janus-tokens dark axis. Do not hardcode.
+$white-dark:                        $janus-color-white-dark !default;   // Surface 0 base (#1a1a1a)
+$black-dark:                        $janus-color-black-dark !default;   // high-contrast text (#f5f5f5)
+
+// Neutral gray scale (inverted lightness) — from the janus-tokens dark axis.
+$gray-50-dark:                      $janus-color-gray-50-dark !default;       // just above Surface 0
+$gray-100-dark:                     $janus-color-gray-100-dark !default;      // Surface 1 (#242424)
+$gray-200-dark:                     $janus-color-gray-200-dark !default;      // borders/dividers (#2e2e2e)
+$gray-300-dark:                     $janus-color-gray-300-dark !default;
+$gray-400-dark:                     $janus-color-gray-400-dark !default;
+$gray-500-dark:                     $janus-color-gray-500-dark !default;      // midpoint — narrower inversion
+$gray-600-dark:                     $janus-color-gray-600-dark !default;
+$gray-700-dark:                     $janus-color-gray-700-dark !default;
+$gray-800-dark:                     $janus-color-gray-800-dark !default;
+$gray-900-dark:                     $janus-color-gray-900-dark !default;      // darkest gray <-> near-white text
+
+$grays-dark: (
+  "50":  $gray-50-dark,
+  "100": $gray-100-dark,
+  "200": $gray-200-dark,
+  "300": $gray-300-dark,
+  "400": $gray-400-dark,
+  "500": $gray-500-dark,
+  "600": $gray-600-dark,
+  "700": $gray-700-dark,
+  "800": $gray-800-dark,
+  "900": $gray-900-dark
+) !default;
+
+// Elevation ladder (dark). See dark-mode-guide-en.md §2.2 + inventory §6.
+// Surface 0 = body-bg (dark $white, #1a1a1a). Surfaces step LIGHTER with height.
+$surface-0-dark:                    $white-dark !default;        // base/body            (#1a1a1a)
+$surface-1-dark:                    $gray-100-dark !default;     // card/panel/nav/row   (#242424)
+$surface-2-dark:                    $gray-200-dark !default;     // modal/dropdown/tooltip (#2e2e2e)
+
+// Brand primary — hold hue, lift lightness for dark surfaces (guide §3.1).
+// Sourced from the janus-tokens dark primary token ($janus-color-primary-dark).
+$primary-dark-base:                 $janus-color-primary-dark !default;
+// Tint scale: tint the dark primary base TOWARD the darkest surface so the
+// low tints (25/50/75) read as faint dark-blue washes on dark rather than the
+// near-white washes they are in light mode (which would be invisible on dark).
+// Mirrors the light tint ladder (97/94/91/80/60/40/20 %) in reverse direction.
+$primary-25-dark:                   mix($surface-0-dark, $primary-dark-base, 97%) !default;
+$primary-50-dark:                   mix($surface-0-dark, $primary-dark-base, 94%) !default;
+$primary-75-dark:                   mix($surface-0-dark, $primary-dark-base, 91%) !default;
+$primary-100-dark:                  mix($surface-0-dark, $primary-dark-base, 80%) !default;
+$primary-200-dark:                  mix($surface-0-dark, $primary-dark-base, 60%) !default;
+$primary-300-dark:                  mix($surface-0-dark, $primary-dark-base, 40%) !default;
+$primary-400-dark:                  mix($surface-0-dark, $primary-dark-base, 20%) !default;
+
+// Semantic bases (dark) — hold hue, adjust lightness only (guide §3.2).
+// Sourced from the janus-tokens dark semantic tokens.
+$success-dark-base:                 $janus-color-success-dark !default;
+$info-dark-base:                    $janus-color-info-dark !default;
+$warning-dark-base:                 $janus-color-warning-dark !default;
+$danger-dark-base:                  $janus-color-danger-dark !default;
+
+// Semantic tint scales (dark), mirroring the primary treatment.
+$success-100-dark:                  mix($surface-0-dark, $success-dark-base, 80%) !default;
+$success-200-dark:                  mix($surface-0-dark, $success-dark-base, 60%) !default;
+$info-100-dark:                     mix($surface-0-dark, $info-dark-base, 80%) !default;
+$info-200-dark:                     mix($surface-0-dark, $info-dark-base, 60%) !default;
+$warning-100-dark:                  mix($surface-0-dark, $warning-dark-base, 80%) !default;
+$warning-200-dark:                  mix($surface-0-dark, $warning-dark-base, 60%) !default;
+$danger-100-dark:                   mix($surface-0-dark, $danger-dark-base, 80%) !default;
+$danger-200-dark:                   mix($surface-0-dark, $danger-dark-base, 60%) !default;
+// scss-docs-end janus-dark-mode-vars
