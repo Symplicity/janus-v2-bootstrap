@@ -1,3 +1,9 @@
+// dark-mode custom-property mixins (defines janus-dark-vars()
+// used inside the color-mode(dark) block below). Imported here so every entry
+// point that pulls in `_root` (bootstrap, bootstrap-reboot, bootstrap-utilities)
+// has the mixin available.
+@import "janus_root-dark";
+
 :root,
 [data-bs-theme="light"] {
   // Note: Custom variable values only support SassScript inside `#{}`.
@@ -183,5 +189,7 @@
     --#{$prefix}form-invalid-color: #{$form-invalid-color-dark};
     --#{$prefix}form-invalid-border-color: #{$form-invalid-border-color-dark};
     // scss-docs-end root-dark-mode-vars
+
+    @include janus-dark-vars();
   }
 }

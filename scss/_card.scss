@@ -120,7 +120,7 @@
 
     span {
       margin-right: .75rem;
-      color: #fff;
+      color: var(--#{$prefix}white);
       @include border-radius(.25rem);
 
       svg {

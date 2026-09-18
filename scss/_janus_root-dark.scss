@@ -1,0 +1,75 @@
+@mixin janus-dark-vars() {
+  --#{$prefix}white: #{$white-dark};
+  --#{$prefix}black: #{$black-dark};
+  --#{$prefix}white-rgb: #{to-rgb($white-dark)};
+  --#{$prefix}black-rgb: #{to-rgb($black-dark)};
+
+  --#{$prefix}gray-50: #{$gray-50-dark};
+  --#{$prefix}gray-100: #{$gray-100-dark};
+  --#{$prefix}gray-200: #{$gray-200-dark};
+  --#{$prefix}gray-300: #{$gray-300-dark};
+  --#{$prefix}gray-400: #{$gray-400-dark};
+  --#{$prefix}gray-500: #{$gray-500-dark};
+  --#{$prefix}gray-600: #{$gray-600-dark};
+  --#{$prefix}gray-700: #{$gray-700-dark};
+  --#{$prefix}gray-800: #{$gray-800-dark};
+  --#{$prefix}gray-900: #{$gray-900-dark};
+
+  --#{$prefix}gray-50-rgb: #{to-rgb($gray-50-dark)};
+  --#{$prefix}gray-100-rgb: #{to-rgb($gray-100-dark)};
+  --#{$prefix}gray-200-rgb: #{to-rgb($gray-200-dark)};
+  --#{$prefix}gray-300-rgb: #{to-rgb($gray-300-dark)};
+  --#{$prefix}gray-400-rgb: #{to-rgb($gray-400-dark)};
+  --#{$prefix}gray-500-rgb: #{to-rgb($gray-500-dark)};
+  --#{$prefix}gray-600-rgb: #{to-rgb($gray-600-dark)};
+  --#{$prefix}gray-700-rgb: #{to-rgb($gray-700-dark)};
+  --#{$prefix}gray-800-rgb: #{to-rgb($gray-800-dark)};
+  --#{$prefix}gray-900-rgb: #{to-rgb($gray-900-dark)};
+
+  --#{$prefix}border-color: #{$gray-300-dark};
+  --#{$prefix}border-color-translucent: #{rgba($gray-300-dark, .3)};
+
+  --#{$prefix}body-bg: #{$surface-0-dark};
+  --#{$prefix}body-bg-rgb: #{to-rgb($surface-0-dark)};
+  --#{$prefix}card-bg: #{$surface-1-dark};
+  --#{$prefix}card-cap-bg: #{$surface-1-dark};
+  --#{$prefix}list-group-bg: #{$surface-1-dark};
+  --#{$prefix}dropdown-bg: #{$surface-2-dark};
+  --#{$prefix}modal-bg: #{$surface-2-dark};
+  --#{$prefix}popover-bg: #{$surface-2-dark};
+  --#{$prefix}offcanvas-bg: #{$surface-1-dark};
+
+  --#{$prefix}card-border-color: #{$gray-300-dark};
+  --#{$prefix}dropdown-border-color: #{$gray-300-dark};
+  --#{$prefix}modal-border-color: #{$gray-300-dark};
+
+  --#{$prefix}primary: #{$primary-dark-base};
+  --#{$prefix}primary-rgb: #{to-rgb($primary-dark-base)};
+
+  --#{$prefix}primary-25: #{$primary-25-dark};
+  --#{$prefix}primary-50: #{$primary-50-dark};
+  --#{$prefix}primary-75: #{$primary-75-dark};
+  --#{$prefix}primary-100: #{$primary-100-dark};
+  --#{$prefix}primary-200: #{$primary-200-dark};
+  --#{$prefix}primary-300: #{$primary-300-dark};
+  --#{$prefix}primary-400: #{$primary-400-dark};
+  --#{$prefix}primary-dark: #{shade-color($primary-dark-base, 25%)};
+
+  --#{$prefix}success: #{$success-dark-base};
+  --#{$prefix}success-rgb: #{to-rgb($success-dark-base)};
+  --#{$prefix}info: #{$info-dark-base};
+  --#{$prefix}info-rgb: #{to-rgb($info-dark-base)};
+  --#{$prefix}warning: #{$warning-dark-base};
+  --#{$prefix}warning-rgb: #{to-rgb($warning-dark-base)};
+  --#{$prefix}danger: #{$danger-dark-base};
+  --#{$prefix}danger-rgb: #{to-rgb($danger-dark-base)};
+
+  --janus-success-100: #{$success-100-dark};
+  --janus-success-200: #{$success-200-dark};
+  --janus-info-100: #{$info-100-dark};
+  --janus-info-200: #{$info-200-dark};
+  --janus-warning-100: #{$warning-100-dark};
+  --janus-warning-200: #{$warning-200-dark};
+  --janus-danger-100: #{$danger-100-dark};
+  --janus-danger-200: #{$danger-200-dark};
+}
